@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript basics</title>
+</head>
+
+<body>
+    <h1>Javascript basics</h1>
+    <ul>
+        <li>Spring</li>
+        <li>Summer</li>
+        <li>Fall</li>
+        <li>Winter</li>
+    </ul>
+    <script>
+      let id = Symbol("id") //(tag)
+      let id2 = Symbol("id2")
+      console.log(id===id2)
+      console.log(id, id2)
+      console.log(typeof id, typeof id2 )
+
+      const NAME = Symbol("TAG NAME IN CONSOLE")
+      const GRETTING = Symbol("TAG GRETTING IN CONSOLE")
+
+      const guy = {
+        //find symbol
+        [NAME]: "Jon",
+      }
+
+      console.log(guy)
+      guy.NAME = "Jonathan"
+      guy.age = 9
+      console.log(guy)
+      console.log(guy.NAME, guy[NAME])
+
+      guy[GRETTING] = function() {
+        console.log("Hello")
+      }
+
+      //execute function
+      console.log(guy)
+      guy[GRETTING]()
+
+      for(let property in guy){
+        console.log(property)
+        console.log(guy[property])
+      }
+
+      console.log(Object.getOwnPropertySymbols(guy))
+
+    </script>
+</body>
+
+</html>
